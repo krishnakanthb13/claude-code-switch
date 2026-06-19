@@ -1,6 +1,12 @@
 # Claude Code Profile Switcher
 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 A lightweight Windows setup to switch Claude Code between multiple API providers (OpenRouter, Longcat, direct Anthropic) via a right-click context menu or terminal command.
+
+<p align="center">
+  <img src="assets/release_v0.0.1.png" alt="Claude Code Profile Switcher Banner" width="800">
+</p>
 
 ---
 

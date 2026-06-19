@@ -16,6 +16,16 @@ graph TD
     E --> F
 ```
 
+## Core Components
+
+| Component | Type | Responsibility | Key Variables / References |
+| --- | --- | --- | --- |
+| `ccpick.bat` | Windows Batch Script | Interactive console-based menu for selecting profiles and launching Claude Code. | `%USERPROFILE%\.claude`, `%PROFILES_DIR%`, `chcp 437` |
+| `ccswitch.bat` | Windows Batch Script | Silent switcher to swap active profiles without launching the CLI. | `%1` (profile name), `%CLAUDE_DIR%\settings.json` |
+| `install-context-menu.reg` | Windows Registry Script | Registers context menu handlers in Windows Explorer to open folders with Claude. | `HKEY_CLASSES_ROOT\Directory\shell\ClaudeCode` |
+| `uninstall-context-menu.reg` | Windows Registry Script | Unregisters and cleans up Windows Explorer context menu registry changes. | `[-HKEY_CLASSES_ROOT\Directory\shell\ClaudeCode]` |
+| `profiles/` | Subdirectory | Declarative storage containing profile JSON configuration files. | `longcat.json`, `openrouter.json` |
+
 ---
 
 ## Script Implementations
