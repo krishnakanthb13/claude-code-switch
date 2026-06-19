@@ -1,0 +1,15 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\shell\ClaudeCode]
+@="Open with Claude Code"
+"Icon"="C:\\Users\\ADMIN\\.claude\\claude_v2.ico"
+
+[HKEY_CLASSES_ROOT\Directory\shell\ClaudeCode\command]
+@="cmd.exe /k \"cd /d \"%1\" && C:\\Users\\ADMIN\\.claude\\ccpick.bat\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ClaudeCode]
+@="Open with Claude Code"
+"Icon"="C:\\Users\\ADMIN\\.claude\\claude_v2.ico"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ClaudeCode\command]
+@="cmd.exe /k \"cd /d \"%V\" && C:\\Users\\ADMIN\\.claude\\ccpick.bat\""

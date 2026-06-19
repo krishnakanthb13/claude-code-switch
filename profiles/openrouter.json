@@ -1,0 +1,13 @@
+{
+  "env": {
+    "OPENROUTER_API_KEY": "your_openrouter_key",
+    "ANTHROPIC_BASE_URL": "https://openrouter.ai/api",
+    "ANTHROPIC_AUTH_TOKEN": "your_openrouter_key",
+    "ANTHROPIC_API_KEY": "",
+    "ANTHROPIC_MODEL": "openrouter/owl-alpha",
+    "ANTHROPIC_SMALL_FAST_MODEL": "google/gemma-4-31b-it:free",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "openrouter/owl-alpha"
+  },
+  "theme": "dark"
+}
