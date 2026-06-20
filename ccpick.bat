@@ -18,6 +18,7 @@ for %%f in ("%PROFILES_DIR%\*.json") do (
     echo   [!COUNT!] %%~nf
 )
 
+echo.
 echo   [0] default (direct Anthropic)
 echo.
 set /p CHOICE="  Pick a profile: "

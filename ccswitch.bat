@@ -1,9 +1,18 @@
 @echo off
+setlocal enabledelayedexpansion
 set PROFILE=%1
 set CLAUDE_DIR=%USERPROFILE%\.claude
 
 if "%PROFILE%"=="" (
-    echo Usage: ccswitch [longcat^|openrouter^|default]
+    set "PROFILES_LIST="
+    for %%f in ("%CLAUDE_DIR%\profiles\*.json") do (
+        if defined PROFILES_LIST (
+            set "PROFILES_LIST=!PROFILES_LIST!|%%~nf"
+        ) else (
+            set "PROFILES_LIST=%%~nf"
+        )
+    )
+    echo Usage: ccswitch [!PROFILES_LIST!^|default]
     exit /b 1
 )
 

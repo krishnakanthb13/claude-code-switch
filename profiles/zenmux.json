@@ -1,0 +1,13 @@
+{
+  "env": {
+    "ZENMUX_API_KEY": "your_zenmux_api_key",
+    "ANTHROPIC_BASE_URL": "https://zenmux.ai/api/anthropic",
+    "ANTHROPIC_AUTH_TOKEN": "your_zenmux_api_key",
+    "ANTHROPIC_API_KEY": "",
+    "ANTHROPIC_MODEL": "z-ai/glm-5.2-free",
+    "ANTHROPIC_SMALL_FAST_MODEL": "z-ai/glm-4.7-flash-free",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "stepfun/step-3.7-flash-free",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "z-ai/glm-5.2-free"
+  },
+  "theme": "dark"
+}

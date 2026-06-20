@@ -2,7 +2,7 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-A lightweight Windows setup to switch Claude Code between multiple API providers (OpenRouter, Longcat, direct Anthropic) via a right-click context menu or terminal command.
+A lightweight Windows setup to switch Claude Code between multiple API providers (OpenRouter, Longcat, Zenmux, Codestral, direct Anthropic) via a right-click context menu or terminal command.
 
 <p align="center">
   <img src="assets/release_v0.0.1.png" alt="Claude Code Profile Switcher Banner" width="800">
@@ -25,8 +25,10 @@ A lightweight Windows setup to switch Claude Code between multiple API providers
 ```
 .claude/
 ├── profiles/
+│   ├── codestral (depreciated).json
 │   ├── longcat.json
-│   └── openrouter.json
+│   ├── openrouter.json
+│   └── zenmux.json
 ├── ccpick.bat
 ├── ccswitch.bat
 ├── install-context-menu.reg
@@ -72,8 +74,10 @@ The "Open with Claude Code" option should now appear when you right-click any fo
     Claude Code Profile Picker
   ==============================
 
-  [1] longcat
-  [2] openrouter
+  [1] codestral (depreciated)
+  [2] longcat
+  [3] openrouter
+  [4] zenmux
   [0] default (direct Anthropic)
 
   Pick a profile:
@@ -91,6 +95,7 @@ Use this when you want to switch the active profile without launching Claude Cod
 ```cmd
 ccswitch longcat
 ccswitch openrouter
+ccswitch zenmux
 ccswitch default
 ```
 
@@ -158,7 +163,23 @@ To use it from anywhere, add `C:\Users\ADMIN\.claude` to your system PATH:
 }
 ```
 
-> **OpenRouter note:** Use `https://openrouter.ai/api` — no `/v1` suffix. Set `ANTHROPIC_API_KEY` to empty string to prevent Claude Code from authenticating directly with Anthropic. For free-tier models, append `:free` to the model ID where available (e.g. `meta-llama/llama-4-maverick:free`).
+### Zenmux profile (`zenmux.json`)
+
+```json
+{
+  "env": {
+    "ZENMUX_API_KEY": "your_zenmux_api_key",
+    "ANTHROPIC_BASE_URL": "https://zenmux.ai/api/anthropic",
+    "ANTHROPIC_AUTH_TOKEN": "your_zenmux_api_key",
+    "ANTHROPIC_API_KEY": "",
+    "ANTHROPIC_MODEL": "z-ai/glm-5.2-free",
+    "ANTHROPIC_SMALL_FAST_MODEL": "z-ai/glm-4.7-flash-free",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "stepfun/step-3.7-flash-free",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "z-ai/glm-5.2-free"
+  },
+  "theme": "dark"
+}
+```
 
 ---
 
