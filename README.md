@@ -2,7 +2,7 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-A lightweight Windows setup to switch Claude Code between multiple API providers (OpenRouter, Longcat, Zenmux, Codestral, direct Anthropic) via a right-click context menu or terminal command.
+A lightweight Windows setup to switch Claude Code between multiple API providers (OpenRouter, Longcat, Zenmux, DeepSeek, Codestral, direct Anthropic) via a right-click context menu or terminal command.
 
 <p align="center">
   <img src="assets/release_v0.0.1.png" alt="Claude Code Profile Switcher Banner" width="800">
@@ -26,6 +26,7 @@ A lightweight Windows setup to switch Claude Code between multiple API providers
 .claude/
 ├── profiles/
 │   ├── codestral (depreciated).json
+│   ├── deepseek.json
 │   ├── longcat.json
 │   ├── openrouter.json
 │   └── zenmux.json
@@ -75,9 +76,10 @@ The "Open with Claude Code" option should now appear when you right-click any fo
   ==============================
 
   [1] codestral (depreciated)
-  [2] longcat
-  [3] openrouter
-  [4] zenmux
+  [2] deepseek
+  [3] longcat
+  [4] openrouter
+  [5] zenmux
   [0] default (direct Anthropic)
 
   Pick a profile:
@@ -93,6 +95,8 @@ The "Open with Claude Code" option should now appear when you right-click any fo
 Use this when you want to switch the active profile without launching Claude Code, or from an already open terminal.
 
 ```cmd
+ccswitch "codestral (depreciated)"
+ccswitch deepseek
 ccswitch longcat
 ccswitch openrouter
 ccswitch zenmux
@@ -178,6 +182,42 @@ To use it from anywhere, add `C:\Users\ADMIN\.claude` to your system PATH:
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "z-ai/glm-5.2-free"
   },
   "theme": "dark"
+}
+```
+
+### DeepSeek profile (`deepseek.json`)
+
+```json
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://api.deepseek.com/anthropic",
+    "ANTHROPIC_AUTH_TOKEN": "<your DeepSeek API Key>",
+    "ANTHROPIC_API_KEY": "",
+    "ANTHROPIC_MODEL": "deepseek-v4-pro[1m]",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "deepseek-v4-pro[1m]",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-v4-pro[1m]",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-v4-flash",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "deepseek-v4-flash",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "CLAUDE_CODE_EFFORT_LEVEL": "max"
+  }
+}
+```
+
+### Codestral profile (depreciated) (`codestral (depreciated).json`)
+
+```json
+{
+  "env": {
+    "CODESTRAL_API_KEY": "",
+    "ANTHROPIC_BASE_URL": "https://codestral.mistral.ai/v1/chat/completions",
+    "ANTHROPIC_AUTH_TOKEN": "",
+    "ANTHROPIC_API_KEY": "",
+    "ANTHROPIC_MODEL": "codestral-2508",
+    "ANTHROPIC_SMALL_FAST_MODEL": "codestral-2508",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "codestral-2508",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "codestral-2508"
+  }
 }
 ```
 
