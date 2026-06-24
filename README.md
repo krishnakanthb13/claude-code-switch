@@ -27,6 +27,7 @@ A lightweight Windows setup to switch Claude Code between multiple API providers
 ├── profiles/
 │   ├── codestral (depreciated).json
 │   ├── deepseek.json
+│   ├── glm.json
 │   ├── longcat.json
 │   ├── openrouter.json
 │   └── zenmux.json
@@ -77,9 +78,10 @@ The "Open with Claude Code" option should now appear when you right-click any fo
 
   [1] codestral (depreciated)
   [2] deepseek
-  [3] longcat
-  [4] openrouter
-  [5] zenmux
+  [3] glm
+  [4] longcat
+  [5] openrouter
+  [6] zenmux
   [0] default (direct Anthropic)
 
   Pick a profile:
@@ -97,6 +99,7 @@ Use this when you want to switch the active profile without launching Claude Cod
 ```cmd
 ccswitch "codestral (depreciated)"
 ccswitch deepseek
+ccswitch glm
 ccswitch longcat
 ccswitch openrouter
 ccswitch zenmux
@@ -204,6 +207,21 @@ To use it from anywhere, add `C:\Users\ADMIN\.claude` to your system PATH:
 }
 ```
 
+### GLM profile (`glm.json`)
+
+```json
+{
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "your_glm_auth_token",
+    "ANTHROPIC_BASE_URL": "https://api.z.ai/api/anthropic",
+    "API_TIMEOUT_MS": "3000000",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "glm-4.5-flash",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "glm-4.7-flash",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "glm-4.7-flash"
+  }
+}
+```
+
 ### Codestral profile (depreciated) (`codestral (depreciated).json`)
 
 ```json
@@ -251,4 +269,4 @@ To use it from anywhere, add `C:\Users\ADMIN\.claude` to your system PATH:
 | Charged models on OpenRouter | Set all four model env vars explicitly, use `:free` suffix |
 | Profile not appearing in menu | Ensure file is `.json` extension and is inside the `profiles\` folder |
 
-
+---
