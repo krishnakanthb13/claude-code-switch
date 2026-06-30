@@ -145,10 +145,10 @@ To use it from anywhere, add `C:\Users\ADMIN\.claude` to your system PATH:
   "env": {
     "ANTHROPIC_AUTH_TOKEN": "your_longcat_key",
     "ANTHROPIC_BASE_URL": "https://api.longcat.chat/anthropic",
-    "ANTHROPIC_MODEL": "LongCat-2.0-Preview",
-    "ANTHROPIC_SMALL_FAST_MODEL": "LongCat-2.0-Preview",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "LongCat-2.0-Preview",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "LongCat-2.0-Preview",
+    "ANTHROPIC_MODEL": "LongCat-2.0",
+    "ANTHROPIC_SMALL_FAST_MODEL": "LongCat-2.0",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "LongCat-2.0",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "LongCat-2.0",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": 1
   }
 }
